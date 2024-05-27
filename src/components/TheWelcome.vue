@@ -17,7 +17,7 @@ const upload = async (e) => {
       let headers = [];
       let max = process.env.MAX_LIMIT <= results.data.length ? process.env.MAX_LIMIT : results.data.length;
 
-      for (let i = 0; i <= max; i++) {
+      for (let i = 0; i < max; i++) {
         let element = results.data[i];
         let row = [];
         for (let j = 0; j < element.length; j++) {
@@ -91,7 +91,6 @@ const fetchRapid = async (artistId) => {
 
     try {
       const response = await axios.request(options);
-      console.log(response.data);
       return {
         data: response.data
       };
